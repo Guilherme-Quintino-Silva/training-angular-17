@@ -3,8 +3,24 @@
 <h2>Dobro: {{ countDouble() }}</h2>
 <button (click)="decrement()">Decremento</button>
 <button (click)="increment()">Incremento</button>
-<hr>
+<hr />
 <h2>{{ name() }}</h2>
 <button (click)="setName()">Setar nome com o Set do Signals</button>
 <button (click)="updateName()">Setar nome com o Update do Signals</button>
 <button (click)="updateChangeArray()">Inserir numero no Array</button>
+<hr>
+<h2>Teste com mudancas do ngModel no Form Driven.</h2>
+<form (ngSubmit)="sendData()">
+  <section>
+    <label for="numberOne"> Primeiro numero</label>
+    <input type="number" name="numberOne" id="numberOne" [(ngModel)]="obj.numberOne" />
+  </section>
+  <section>
+    <label for="numberTwo"> Segundo numero</label>
+    <input type="number" name="numberTwo" id="numberTwo" [(ngModel)]="obj.numberTwo" />
+  </section>
+  <section>
+    <h3>{{ soma() }}</h3>
+  </section>
+  <input type="submit" value="enviar" />
+</form>
